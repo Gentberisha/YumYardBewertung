@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Yum Yard – Bewertung</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .logo {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .logo span {
+      color: #cddc39;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .box {
+      max-width: 420px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: #cddc39;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #b5c62f;
+    }
+
+    .success {
+      display: none;
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="logo">yum <span>yard</span></div>
+  <h1>Bewerte dein Essen</h1>
+
+  <div class="box">
+
+    <form id="form">
+
+      <label>⭐ Geschmack</label>
+      <select required>
+        <option value="">Bitte wählen</option>
+        <option>1 - schlecht</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5 - sehr gut</option>
+      </select>
+
+      <label>🥗 Frisch zubereitet?</label>
+      <select required>
+        <option value="">Bitte wählen</option>
+        <option>Ja</option>
+        <option>Nein</option>
+      </select>
+
+      <label>🌱 Nachhaltig?</label>
+      <select required>
+        <option value="">Bitte wählen</option>
+        <option>Ja</option>
+        <option>Nein</option>
+      </select>
+
+      <label>💬 Feedback</label>
+      <textarea placeholder="Deine Meinung..."></textarea>
+
+      <button type="submit">Bewertung senden</button>
+
+    </form>
+
+    <div class="success" id="success">
+      ✅ Danke für deine Bewertung!
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById("form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("success").style.display = "block";
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
